@@ -1720,7 +1720,7 @@ Happy to share a quick overview or examples if helpful.</div>
                 🖥 Open Presentation View
               </button>
               <button id="smOfflineBtn" onclick="smToggleOffline()" aria-expanded="false"
-                style="display:inline-flex;align-items:center;gap:5px;font-size:0.74rem;font-weight:600;color:var(--mom-muted2);background:none;border:1px solid var(--border2);padding:5px 12px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;">
+                style="display:inline-flex;align-items:center;gap:5px;font-size:0.74rem;font-weight:600;color:var(--c-session);background:none;border:1px solid rgba(124,184,168,0.3);padding:5px 12px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;">
                 ⬇ Offline Setup
                 <span id="smOfflineCaret" style="display:inline-block;font-size:0.6rem;transition:transform .2s;">▾</span>
               </button>
@@ -2159,15 +2159,17 @@ Happy to share a quick overview or examples if helpful.</div>
     panel.style.display = opening ? 'block' : 'none';
     btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
     if (opening) {
-      btn.style.background = 'rgba(124,184,168,0.14)';
-      btn.style.color = 'var(--c-session)';
-      btn.style.borderColor = 'rgba(124,184,168,0.5)';
-      caret.style.transform = 'rotate(180deg)';
-      smRenderOfflineList();
-    } else {
+      // Open → greyed/recessed (caret up signals expanded)
       btn.style.background = 'none';
       btn.style.color = 'var(--mom-muted2)';
       btn.style.borderColor = 'var(--border2)';
+      caret.style.transform = 'rotate(180deg)';
+      smRenderOfflineList();
+    } else {
+      // Closed → colored, matching the "Open Presentation View" button
+      btn.style.background = 'none';
+      btn.style.color = 'var(--c-session)';
+      btn.style.borderColor = 'rgba(124,184,168,0.3)';
       caret.style.transform = 'rotate(0deg)';
     }
   }

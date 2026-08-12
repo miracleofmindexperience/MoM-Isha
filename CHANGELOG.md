@@ -5,6 +5,25 @@ Each entry includes the file, the specific change, and any notes relevant for me
 
 ---
 
+## 2026-08-11
+
+### Session Media — Video Download Option Disabled
+**Files:** `present.html`, `index.html`
+**Commit:** `d5754a9`
+**Change:** Disabled the browser's built-in **Download** option (and the right-click "Save video as…" menu) on the session video players — both the full-screen Presentation View player (`present.html`) and the in-page preview player (`index.html`). Implemented by adding `controlsList="nodownload noremoteplayback"`, `disablePictureInPicture`, and an `oncontextmenu` guard to the `<video>` elements.
+**Reason:** Facilitators could download the session videos from the player's three-dot (⋮) menu.
+**Note:** Standard playback controls (play/pause, seek, volume, fullscreen) are unaffected.
+
+---
+
+### Session Media — "Offline Setup" Button Open/Closed State
+**File:** `index.html`
+**Commit:** `47ec684` (supersedes initial version in `d5754a9`)
+**Change:** The **Offline Setup** toggle now visibly indicates whether its panel is expanded or collapsed. Collapsed = teal styling (matching the adjacent "Open Presentation View" button); expanded = greyed/recessed with the caret rotated up (▾ → ▴). Added `aria-expanded` for accessibility.
+**Reason:** The button previously looked identical whether the offline-download panel was open or closed, so users couldn't tell its state.
+
+---
+
 ## 2026-06-07
 
 ### Email Templates — Tab Order Updated

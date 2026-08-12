@@ -16,11 +16,12 @@ Each entry includes the file, the specific change, and any notes relevant for me
 
 ---
 
-### Session Media — "Offline Setup" Button Open/Closed State
+### Session Media — "Offline Setup" Button Open/Closed State + SVG Icons
 **File:** `index.html`
-**Commit:** `47ec684` (supersedes initial version in `d5754a9`)
-**Change:** The **Offline Setup** toggle now visibly indicates whether its panel is expanded or collapsed. Collapsed = teal styling (matching the adjacent "Open Presentation View" button); expanded = greyed/recessed with the caret rotated up (▾ → ▴). Added `aria-expanded` for accessibility.
-**Reason:** The button previously looked identical whether the offline-download panel was open or closed, so users couldn't tell its state.
+**Commits:** `47ec684`, plus icon conversion (this batch); supersedes initial version in `d5754a9`
+**Change:** The **Offline Setup** toggle now visibly indicates whether its panel is expanded or collapsed. Collapsed = teal styling (matching the adjacent "Open Presentation View" button); expanded = greyed/recessed with the caret rotated up. Added `aria-expanded` for accessibility.
+Also replaced the button's two **dingbat arrow characters** (`⬇` download, `▾` caret) with **inline SVG icons** (download glyph + chevron, `currentColor`, matching the site's existing icon style). The chevron rotates 180° when the panel opens.
+**Reason:** Button state was previously indistinguishable open vs. closed. Separately, the dingbat arrow glyphs did not render in some environments (they were absent on the production site), leaving the button with no icons; inline SVG renders reliably everywhere.
 
 ---
 
@@ -110,6 +111,21 @@ Each entry includes the file, the specific change, and any notes relevant for me
 ---
 
 ## 2026-05-17
+
+### Session Resources — Accordion Cards & Blocks Unified to Section Teal
+**File:** `index.html`
+**Commits:** `6002711`, `46a0228`
+**Change:** Unified the entire Session Resources section to the section teal (`#7cb8a8`):
+- All Session Resources accordion cards received the `c-session` class + a subtle teal tint —
+  `.expand-card.c-session { background: rgba(124,184,168,0.08); border-color: rgba(124,184,168,0.22); }`
+  plus a teal left-edge bar (`.expand-card.c-session::before { background: var(--c-session); }`).
+- "Revisit Training" block: blue `rgba(103,142,204,…)` → teal `rgba(124,184,168,0.08)` / `…,0.22`.
+- "Find a session near you" block + its button: amber `var(--vol-amber)` → teal `var(--c-session)`.
+**Note:** ⚠️ **Backfilled entry** — this change shipped to the code on 2026-05-17 but was not logged
+at the time, so it was likely never applied to prod. This is why prod's Session Resources cards/blocks
+differ in color from the staging site. Please apply.
+
+---
 
 ### Session Media — Playlist Order Updated
 **File:** `index.html`

@@ -836,7 +836,7 @@
           </a>
         </div>
         <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden;">
-          <video controls preload="metadata" style="position:absolute; top:0; left:0; width:100%; height:100%; display:block;">
+          <video controls preload="metadata" controlsList="nodownload noremoteplayback" disablePictureInPicture oncontextmenu="return false" style="position:absolute; top:0; left:0; width:100%; height:100%; display:block;">
             <source src="https://dl.dropboxusercontent.com/scl/fo/1sycc2gff066vuwgx0tci/ALPmFro7gTjMBzSWliFVX2Q/Video%20Booth%20set%20up%20.m4v?rlkey=ikz1rzvmog4ntns2xhv94tt4k" type="video/mp4" />
           </video>
         </div>
@@ -2374,6 +2374,7 @@ Happy to share a quick overview or examples if helpful.</div>
   <div class="wt-modal" id="wtModal">
     <button class="wt-close" onclick="wtClose()" aria-label="Close">&times;</button>
     <video id="wtVideo" controls preload="none"
+      controlsList="nodownload noremoteplayback" disablePictureInPicture oncontextmenu="return false"
       src="https://dl.dropboxusercontent.com/scl/fo/1sycc2gff066vuwgx0tci/AEVo4tJglDpls1BEWi2PwnM/MoM-BBResourceKit-WalkThrough.mp4?rlkey=ikz1rzvmog4ntns2xhv94tt4k">
     </video>
   </div>

@@ -16,6 +16,14 @@ Each entry includes the file, the specific change, and any notes relevant for me
 
 ---
 
+### Outreach & Training Videos — Download Option Disabled
+**File:** `index.html`
+**Change:** Applied the same download-disabling (`controlsList="nodownload noremoteplayback"`, `disablePictureInPicture`, `oncontextmenu` guard) to the remaining native `<video>` players: the **Booth Setup** video (Outreach Resources) and the **Resource Kit Walkthrough** video (Revisit Training modal).
+**Reason:** These videos were still downloadable from the player's ⋮ menu (reported for Booth Setup).
+**Not covered:** The **App Features Guide** video is a Google Drive `/preview` iframe embed, not a native player — its controls (including download) are rendered by Google and cannot be changed from our page. Fixing it requires replacing the Drive embed with a self-hosted `<video>` (see pending item).
+
+---
+
 ### Session Media — "Offline Setup" Button Open/Closed State + SVG Icons
 **File:** `index.html`
 **Commits:** `47ec684`, plus icon conversion (this batch); supersedes initial version in `d5754a9`

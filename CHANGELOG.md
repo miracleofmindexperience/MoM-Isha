@@ -5,7 +5,39 @@ Each entry includes the file, the specific change, and any notes relevant for me
 
 ---
 
+## 2026-08-13
+
+### App Features Guide — Migrated from Google Drive Embed to Native Video
+**File:** `index.html`
+**Commit:** `a4d9397`
+**Change:** Replaced the Google Drive `/preview` iframe with a self-hosted native `<video>` (Dropbox, same shared folder as the other kit videos: `.../MoMAppDemo.mp4`), sized to the phone frame with `object-fit: contain`. Player attributes: `controls playsinline`, `controlsList="nodownload noplaybackrate noremoteplayback"`, `disablePictureInPicture`, and an `oncontextmenu` guard.
+**Reason:** On mobile the Google Drive player rendered its own controls floating over the middle of the video (blocking the app view), and its volume / CC / speed pop-ups could not be dismissed — all inside Google's iframe and uncontrollable from our page. The video was also downloadable. The native player fixes all three: controls sit at the bottom of the phone frame, pop-ups are gone, download and the "1x" speed menu are disabled, and it behaves consistently on mobile and desktop.
+
+---
+
+## 2026-08-12
+
+### Outreach & Training Videos — Download Option Disabled
+**File:** `index.html`
+**Commit:** `8d3837c`
+**Change:** Applied the same download-disabling (`controlsList="nodownload noremoteplayback"`, `disablePictureInPicture`, `oncontextmenu` guard) to the remaining native `<video>` players: the **Booth Setup** video (Outreach Resources) and the **Resource Kit Walkthrough** video (Revisit Training modal).
+**Reason:** These videos were still downloadable from the player's ⋮ menu (reported for Booth Setup).
+**Note:** The **App Features Guide** video (a Google Drive iframe at the time) was migrated to a native player the next day — see 2026-08-13.
+
+---
+
 ## 2026-08-11
+
+### Session Media — "Offline Setup" Button: SVG Icons
+**File:** `index.html`
+**Commit:** `ccd326b`
+**Change:** Replaced the Offline Setup button's two **dingbat arrow characters** (`⬇` download, `▾` caret) with **inline SVG icons** (download glyph + chevron, `currentColor`, matching the site's icon style). The chevron rotates 180° when the panel opens.
+**Reason:** The dingbat glyphs did not render in some environments (they were absent on the production site), leaving the button with no icons; inline SVG renders reliably everywhere.
+**Note:** The 2026-05-17 Session Resources color change was also backfilled into this changelog on this date — see that section.
+
+---
+
+## 2026-08-10
 
 ### Session Media — Video Download Option Disabled
 **Files:** `present.html`, `index.html`
@@ -16,27 +48,11 @@ Each entry includes the file, the specific change, and any notes relevant for me
 
 ---
 
-### Outreach & Training Videos — Download Option Disabled
+### Session Media — "Offline Setup" Button Open/Closed State
 **File:** `index.html`
-**Change:** Applied the same download-disabling (`controlsList="nodownload noremoteplayback"`, `disablePictureInPicture`, `oncontextmenu` guard) to the remaining native `<video>` players: the **Booth Setup** video (Outreach Resources) and the **Resource Kit Walkthrough** video (Revisit Training modal).
-**Reason:** These videos were still downloadable from the player's ⋮ menu (reported for Booth Setup).
-**Note:** The **App Features Guide** video was a Google Drive `/preview` iframe (its controls are rendered by Google and can't be changed from our page) — now migrated to a native player; see the next entry.
-
----
-
-### App Features Guide — Migrated from Google Drive Embed to Native Video
-**File:** `index.html`
-**Change:** Replaced the Google Drive `/preview` iframe with a self-hosted native `<video>` (Dropbox, same shared folder as the other kit videos: `.../MoMAppDemo.mp4`), sized to the phone frame with `object-fit: contain`. Player attributes: `controls playsinline`, `controlsList="nodownload noplaybackrate noremoteplayback"`, `disablePictureInPicture`, and an `oncontextmenu` guard.
-**Reason:** On mobile the Google Drive player rendered its own controls floating over the middle of the video (blocking the app view), and its volume / CC / speed pop-ups could not be dismissed — all inside Google's iframe and uncontrollable from our page. The video was also downloadable. The native player fixes all three: controls sit at the bottom of the phone frame, pop-ups are gone, download and the "1x" speed menu are disabled, and it behaves consistently on mobile and desktop.
-
----
-
-### Session Media — "Offline Setup" Button Open/Closed State + SVG Icons
-**File:** `index.html`
-**Commits:** `47ec684`, plus icon conversion (this batch); supersedes initial version in `d5754a9`
+**Commits:** `d5754a9`, `47ec684`
 **Change:** The **Offline Setup** toggle now visibly indicates whether its panel is expanded or collapsed. Collapsed = teal styling (matching the adjacent "Open Presentation View" button); expanded = greyed/recessed with the caret rotated up. Added `aria-expanded` for accessibility.
-Also replaced the button's two **dingbat arrow characters** (`⬇` download, `▾` caret) with **inline SVG icons** (download glyph + chevron, `currentColor`, matching the site's existing icon style). The chevron rotates 180° when the panel opens.
-**Reason:** Button state was previously indistinguishable open vs. closed. Separately, the dingbat arrow glyphs did not render in some environments (they were absent on the production site), leaving the button with no icons; inline SVG renders reliably everywhere.
+**Reason:** Button state was previously indistinguishable open vs. closed. (Icon rendering was fixed the next day — see 2026-08-11.)
 
 ---
 

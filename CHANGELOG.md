@@ -20,7 +20,14 @@ Each entry includes the file, the specific change, and any notes relevant for me
 **File:** `index.html`
 **Change:** Applied the same download-disabling (`controlsList="nodownload noremoteplayback"`, `disablePictureInPicture`, `oncontextmenu` guard) to the remaining native `<video>` players: the **Booth Setup** video (Outreach Resources) and the **Resource Kit Walkthrough** video (Revisit Training modal).
 **Reason:** These videos were still downloadable from the player's ⋮ menu (reported for Booth Setup).
-**Not covered:** The **App Features Guide** video is a Google Drive `/preview` iframe embed, not a native player — its controls (including download) are rendered by Google and cannot be changed from our page. Fixing it requires replacing the Drive embed with a self-hosted `<video>` (see pending item).
+**Note:** The **App Features Guide** video was a Google Drive `/preview` iframe (its controls are rendered by Google and can't be changed from our page) — now migrated to a native player; see the next entry.
+
+---
+
+### App Features Guide — Migrated from Google Drive Embed to Native Video
+**File:** `index.html`
+**Change:** Replaced the Google Drive `/preview` iframe with a self-hosted native `<video>` (Dropbox, same shared folder as the other kit videos: `.../MoMAppDemo.mp4`), sized to the phone frame with `object-fit: contain`. Player attributes: `controls playsinline`, `controlsList="nodownload noplaybackrate noremoteplayback"`, `disablePictureInPicture`, and an `oncontextmenu` guard.
+**Reason:** On mobile the Google Drive player rendered its own controls floating over the middle of the video (blocking the app view), and its volume / CC / speed pop-ups could not be dismissed — all inside Google's iframe and uncontrollable from our page. The video was also downloadable. The native player fixes all three: controls sit at the bottom of the phone frame, pop-ups are gone, download and the "1x" speed menu are disabled, and it behaves consistently on mobile and desktop.
 
 ---
 

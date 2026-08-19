@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Miracle of Mind — Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mom-black:#100d0a; --mom-black2:#171310; --mom-red:#ec1c2d;
+    --mom-cream:#dfd8ce; --mom-muted:#6e665b; --mom-muted2:#9e968c;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:radial-gradient(1200px 600px at 50% -10%, #1c1712 0%, var(--mom-black) 60%);
+    color:var(--mom-cream); font-family:'Inter',system-ui,sans-serif;
+    min-height:100%; display:flex; flex-direction:column;
+  }
+  header{
+    display:flex; align-items:center; gap:14px;
+    padding:16px 22px; border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  header img{height:30px; display:block}
+  header .divider{width:1px; height:22px; background:rgba(255,255,255,0.14)}
+  header .label{font-size:0.72rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--mom-muted2)}
+
+  main{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:26px 18px 34px}
+  .title{font-family:'Trirong',Georgia,serif; font-size:1.6rem; font-weight:600; text-align:center; line-height:1.25}
+  .sub{font-size:0.82rem; color:var(--mom-muted2); text-align:center; margin-top:-8px}
+
+  .stage{width:100%; display:flex; justify-content:center}
+  video{
+    max-width:min(960px,92vw); max-height:78vh; width:auto; height:auto;
+    background:#000; border-radius:14px; outline:none;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+  /* portrait clips stay phone-sized */
+  video.portrait{max-width:min(400px,88vw)}
+
+  .missing{max-width:520px; text-align:center; color:var(--mom-muted2); font-size:0.95rem; line-height:1.6}
+  .missing b{color:var(--mom-cream)}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px}
+  .chips a{font-size:0.75rem; color:var(--mom-cream); text-decoration:none; border:1px solid rgba(255,255,255,0.18); border-radius:40px; padding:5px 13px}
+  .chips a:hover{border-color:var(--mom-red); color:#fff}
+
+  footer{text-align:center; padding:16px; font-size:0.72rem; color:var(--mom-muted)}
+  footer a{color:var(--mom-muted2); text-decoration:none}
+  footer a:hover{color:var(--mom-red)}
+</style>
+</head>
+<body>
+  <header>
+    <img src="https://static.sadhguru.org/d/46272/1739879389-group-1597883432.png" alt="Miracle of Mind" />
+    <div class="divider"></div>
+    <span class="label">Boom Buddy Resource Kit</span>
+  </header>
+
+  <main>
+    <div id="title" class="title"></div>
+    <div id="sub" class="sub"></div>
+    <div class="stage">
+      <video id="player" controls playsinline preload="metadata"
+             controlsList="nodownload noplaybackrate noremoteplayback"
+             disablePictureInPicture oncontextmenu="return false"></video>
+    </div>
+    <div id="missing" class="missing" style="display:none"></div>
+  </main>
+
+  <footer>
+    Miracle of Mind · Isha Foundation &nbsp;·&nbsp;
+    <a href="https://isha.sadhguru.org/us/en/miracle-of-mind" target="_blank" rel="noopener">isha.sadhguru.org/miracle-of-mind</a>
+  </footer>
+
+<script>
+  var BASE = 'https://dl.dropboxusercontent.com/scl/fo/1sycc2gff066vuwgx0tci/';
+  var RK   = '?rlkey=ikz1rzvmog4ntns2xhv94tt4k';
+  // id -> { file, title, sub, portrait }
+  var VIDEOS = {
+    'walkthrough': { file:'AEVo4tJglDpls1BEWi2PwnM/MoM-BBResourceKit-WalkThrough.mp4', title:'Resource Kit — Walkthrough', sub:'Overview of the Boom Buddy Resource Kit' },
+    'app-features':{ file:'APmAfPO12JjeM_flOtNUXvA/MoMAppDemo.mp4', title:'App Features Guide', sub:'A quick tour of the Miracle of Mind app', portrait:true },
+    'participant': { file:'AKenZeDzDnZYAop3qk3nfEg/MoM-ParticipantSharing.mp4', title:'Participant Experience', sub:'What participants say after the session', portrait:true },
+    'booth':       { file:'ALPmFro7gTjMBzSWliFVX2Q/Video%20Booth%20set%20up%20.m4v', title:'Booth Setup', sub:'Setting up a Miracle of Mind booth' },
+    'yoga-padhi':  { file:'AHAcLGps__sN4Y9ugCOD0ZI/1_MoMEx_Yogapadhi_15min.mp4', title:'Yoga Padhi', sub:'Pre-session' },
+    'waiting-yp':  { file:'ANXW4ohlxUYrxUntHhcF7zg/2_MoMEx_waitingYP_4min.mp4', title:'Waiting Yoga Padhi', sub:'Pre-session' },
+    'intro-med':   { file:'AI-FQCjEPG-dSPV6Oq-jMxo/4_MoMIntroandMeditation.mp4', title:'Intro with Meditation', sub:'Main session' },
+    'managing':    { file:'ANQS3_AoEm2VELYpZ9y3vuI/5_MoM_post_video.mp4', title:'Managing Thoughts', sub:'Post-meditation' },
+    'sg-isha':     { file:'AJEH0MMW7ERBOmZDt_g6gIQ/6__MoMEx_SGIshaIntro_3mi.mp4', title:'Sadhguru & Isha Intro', sub:'Optional' }
+  };
+
+  function getParam(name){
+    var m = new RegExp('[?&]'+name+'=([^&]+)').exec(location.search);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  var id = (getParam('v') || 'walkthrough').toLowerCase();
+  var v  = VIDEOS[id];
+  var player = document.getElementById('player');
+
+  if (v){
+    document.title = v.title + ' — Miracle of Mind';
+    document.getElementById('title').textContent = v.title;
+    document.getElementById('sub').textContent = v.sub || '';
+    if (v.portrait) player.classList.add('portrait');
+    player.src = BASE + v.file + RK;
+  } else {
+    player.style.display = 'none';
+    document.getElementById('title').textContent = 'Video not found';
+    var box = document.getElementById('missing');
+    box.style.display = 'block';
+    var links = Object.keys(VIDEOS).map(function(k){
+      return '<a href="?v='+k+'">'+VIDEOS[k].title+'</a>';
+    }).join('');
+    box.innerHTML = 'No video matches <b>?v='+ (id||'') +'</b>. Try one of these:' +
+                    '<div class="chips">'+links+'</div>';
+  }
+</script>
+</body>
+</html>

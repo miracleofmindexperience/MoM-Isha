@@ -1,0 +1,198 @@
+.page-wrap {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0px;
+  margin: 0 auto;
+}
+.page-wrap-large {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+@keyframes fadeInForARoot {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* .isoBody {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.isoBody[style],
+.isoBody[style] {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+} */
+
+.isoBody.css-loaded {
+  opacity: 1 !important;
+}
+
+.tabNameContainer,
+.tabNameContainer *,
+header,
+header *,
+[id*='countryDropdown'],
+[id*='countryDropdown'] *,
+[id*='register-popup'],
+[id*='register-popup'] *,
+[id*='faq-popup'],
+[id*='faq-popup'] *,
+[class*='chakra'],
+[class*='Chakra'],
+main,
+nav,
+footer,
+aside,
+.progressive-bg,
+.progressive-bg *,
+[class*='banner'],
+[class*='Banner'],
+[class*='banner'] *,
+[class*='Banner'] *,
+.bannerimge,
+.bannerimge * {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+.isoBody > *:not(.tabNameContainer) h1,
+.isoBody > *:not(.tabNameContainer) h2,
+.isoBody > *:not(.tabNameContainer) h3,
+.isoBody > *:not(.tabNameContainer) h4,
+.isoBody > *:not(.tabNameContainer) h5,
+.isoBody > *:not(.tabNameContainer) h6 {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.isoBody > *:not(.tabNameContainer) h1 {
+  animation-delay: 0.1s;
+}
+.isoBody > *:not(.tabNameContainer) h2 {
+  animation-delay: 0.2s;
+}
+.isoBody > *:not(.tabNameContainer) h3 {
+  animation-delay: 0.3s;
+}
+.isoBody > *:not(.tabNameContainer) h4 {
+  animation-delay: 0.15s;
+}
+.isoBody > *:not(.tabNameContainer) h5 {
+  animation-delay: 0.2s;
+}
+.isoBody > *:not(.tabNameContainer) h6 {
+  animation-delay: 0.25s;
+}
+
+.isoBody > *:not(.tabNameContainer) p,
+.isoBody > *:not(.tabNameContainer) span,
+.isoBody > *:not(.tabNameContainer) label,
+.isoBody > *:not(.tabNameContainer) strong,
+.isoBody > *:not(.tabNameContainer) em,
+.isoBody > *:not(.tabNameContainer) b,
+.isoBody > *:not(.tabNameContainer) i {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.isoBody > *:not(.tabNameContainer) p {
+  animation-delay: 0.2s;
+}
+.isoBody > *:not(.tabNameContainer) span {
+  animation-delay: 0.15s;
+}
+.isoBody > *:not(.tabNameContainer) label {
+  animation-delay: 0.1s;
+}
+
+.isoBody
+  > *:not(.tabNameContainer):not(.progressive-bg):not([class*='banner']):not(
+    [class*='Banner']
+  )
+  section,
+.isoBody
+  > *:not(.tabNameContainer):not(.progressive-bg):not([class*='banner']):not(
+    [class*='Banner']
+  )
+  article {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.isoBody
+  > *:not(.tabNameContainer):not(.progressive-bg):not([class*='banner']):not(
+    [class*='Banner']
+  )
+  section {
+  animation-delay: 0.1s;
+}
+.isoBody
+  > *:not(.tabNameContainer):not(.progressive-bg):not([class*='banner']):not(
+    [class*='Banner']
+  )
+  article {
+  animation-delay: 0.15s;
+}
+
+.isoBody > *:not(.tabNameContainer) img,
+.isoBody > *:not(.tabNameContainer) picture,
+.isoBody > *:not(.tabNameContainer) video,
+.isoBody > *:not(.tabNameContainer) iframe,
+.isoBody > *:not(.tabNameContainer) svg {
+  animation: fadeInForARoot 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.isoBody > *:not(.tabNameContainer) a,
+.isoBody > *:not(.tabNameContainer) button {
+  animation: fadeInForARoot 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.15s;
+}
+
+.isoBody > *:not(.tabNameContainer) ul,
+.isoBody > *:not(.tabNameContainer) ol,
+.isoBody > *:not(.tabNameContainer) li {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.isoBody > *:not(.tabNameContainer) input,
+.isoBody > *:not(.tabNameContainer) textarea,
+.isoBody > *:not(.tabNameContainer) select,
+.isoBody > *:not(.tabNameContainer) option {
+  animation: fadeInForARoot 0.5s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.1s;
+}
+
+.isoBody > *:not(.tabNameContainer) table,
+.isoBody > *:not(.tabNameContainer) thead,
+.isoBody > *:not(.tabNameContainer) tbody,
+.isoBody > *:not(.tabNameContainer) tr,
+.isoBody > *:not(.tabNameContainer) th,
+.isoBody > *:not(.tabNameContainer) td {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.15s;
+}
+
+.isoBody > *:not(.tabNameContainer) blockquote,
+.isoBody > *:not(.tabNameContainer) pre,
+.isoBody > *:not(.tabNameContainer) code {
+  animation: fadeInForARoot 0.6s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}

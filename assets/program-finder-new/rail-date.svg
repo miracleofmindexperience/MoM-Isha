@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="fi-ts-calendar" clip-path="url(#clip0_0_835)">
+<path id="Vector" d="M17.9167 1.66667H15V0H14.1667V1.66667H5.83333V0H5V1.66667H2.08333C0.935 1.66667 0 2.60167 0 3.75V20H20V3.75C20 2.60167 19.065 1.66667 17.9167 1.66667ZM2.08333 2.5H17.9167C18.6058 2.5 19.1667 3.06083 19.1667 3.75V6.66667H0.833333V3.75C0.833333 3.06083 1.39417 2.5 2.08333 2.5ZM0.833333 19.1667V7.5H19.1667V19.1667H0.833333Z" fill="#1D1A16"/>
+<path id="Vector_2" d="M9.16667 10.8333H7.5V11.6667H9.16667V10.8333Z" fill="#1D1A16"/>
+<path id="Vector_3" d="M12.5 10.8333H10.8333V11.6667H12.5V10.8333Z" fill="#1D1A16"/>
+<path id="Vector_4" d="M15.8333 10.8333H14.1667V11.6667H15.8333V10.8333Z" fill="#1D1A16"/>
+<path id="Vector_5" d="M9.16667 15H7.5V15.8333H9.16667V15Z" fill="#1D1A16"/>
+<path id="Vector_6" d="M5.83333 10.8333H4.16667V11.6667H5.83333V10.8333Z" fill="#1D1A16"/>
+<path id="Vector_7" d="M5.83333 15H4.16667V15.8333H5.83333V15Z" fill="#1D1A16"/>
+<path id="Vector_8" d="M12.5 15H10.8333V15.8333H12.5V15Z" fill="#1D1A16"/>
+<path id="Vector_9" d="M15.8333 15H14.1667V15.8333H15.8333V15Z" fill="#1D1A16"/>
+</g>
+<defs>
+<clipPath id="clip0_0_835">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>

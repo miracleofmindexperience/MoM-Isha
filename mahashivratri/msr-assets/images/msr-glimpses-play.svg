@@ -1,0 +1,19 @@
+<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="52" cy="52" r="51.5" stroke="#F2B439" stroke-opacity="0.3"/>
+  <circle cx="52" cy="52" r="39.546" fill="url(#msrGlimpsesPlayFill)" fill-opacity="0.9" stroke="#F2B439"/>
+  <g filter="url(#msrGlimpsesPlayBlur)">
+    <path d="M64.5847 51.3849L42.121 40.1531C41.8045 39.9959 41.4297 40.0122 41.1285 40.1981C40.8273 40.3849 40.6436 40.7127 40.6436 41.067V63.5305C40.6436 63.8849 40.8273 64.2126 41.1285 64.3995C41.2919 64.5006 41.4778 64.5516 41.6646 64.5516C41.8208 64.5516 41.9771 64.5159 42.121 64.4444L64.5846 53.2126C64.9308 53.0391 65.1493 52.6857 65.1493 52.2988C65.1493 51.9118 64.9308 51.5585 64.5847 51.3849Z" fill="white"/>
+  </g>
+  <path d="M65.1686 51.6615L42.1571 40.1557C41.8328 39.9947 41.4489 40.0114 41.1404 40.2018C40.8318 40.3932 40.6436 40.7289 40.6436 41.0919V64.1033C40.6436 64.4663 40.8318 64.8021 41.1404 64.9935C41.3077 65.097 41.4981 65.1493 41.6895 65.1493C41.8495 65.1493 42.0096 65.1127 42.1571 65.0395L65.1685 53.5338C65.5232 53.356 65.747 52.994 65.747 52.5976C65.747 52.2012 65.5232 51.8393 65.1686 51.6615Z" fill="white"/>
+  <defs>
+    <radialGradient id="msrGlimpsesPlayFill" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(52 52) rotate(90) scale(90.2529 40.046)">
+      <stop stop-color="#737373" stop-opacity="0"/>
+      <stop offset="1" stop-color="#020311"/>
+    </radialGradient>
+    <filter id="msrGlimpsesPlayBlur" x="30.6436" y="30.0459" width="44.5059" height="44.5059" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+</svg>

@@ -335,9 +335,9 @@ const openSansRegular = localFont({
 // These coexist with the legacy per-weight exports above during migration.
 const fedraSans = localFont({
   src: [
-    { path: 'fedra-sans-book.woff2', weight: '400', style: 'normal' },
-    { path: 'fedra-sans-book-italic.woff2', weight: '400', style: 'italic' },
-    { path: 'fedra-sans-medium.woff2', weight: '500', style: 'normal' },
+    { path: 'fedra-sans-pro-book.woff2', weight: '400', style: 'normal' },
+    { path: 'fedra-sans-pro-book-italic.woff2', weight: '400', style: 'italic' },
+    { path: 'fedra-sans-pro-medium.woff2', weight: '500', style: 'normal' },
   ],
   display: 'swap',
   // Not preloaded yet — only a handful of components have migrated to this token so
@@ -461,7 +461,7 @@ const vesperLibre = localFont({
 // never be reached. Bare variables let resolveFonts() compose the working order —
 // script face -> Latin face -> script system tail -> generic.
 // So don't use var(--font-anek-*)/var(--font-mukta*) directly; go through
-// resolveFonts() in styles/theme/fontResolver.js.
+// resolveFonts() in packages/shared/theme/fontResolver.js.
 const anekTamil = localFont({
   src: [{ path: 'anek-tamil.woff2', weight: '100 800', style: 'normal' }],
   declarations: [

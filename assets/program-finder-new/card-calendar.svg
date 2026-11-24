@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="fi-ts-calendar-day" clip-path="url(#clip0_0_795)">
+<path id="Vector" d="M2.33333 9.91667H5.25V7H2.33333V9.91667ZM2.91667 7.58333H4.66667V9.33333H2.91667V7.58333ZM12.5417 1.16667H10.5V0H9.91667V1.16667H4.08333V0H3.5V1.16667H1.45833C0.653917 1.16667 0 1.82117 0 2.625V14H14V2.625C14 1.82117 13.3461 1.16667 12.5417 1.16667ZM1.45833 1.75H12.5417C13.0241 1.75 13.4167 2.14258 13.4167 2.625V4.66667H0.583333V2.625C0.583333 2.14258 0.975917 1.75 1.45833 1.75ZM0.583333 13.4167V5.25H13.4167V13.4167H0.583333Z" fill="#CF4520"/>
+</g>
+<defs>
+<clipPath id="clip0_0_795">
+<rect width="14" height="14" fill="white"/>
+</clipPath>
+</defs>
+</svg>
